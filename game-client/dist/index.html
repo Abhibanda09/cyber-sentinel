@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBER-SENTINEL | SOC Telemetry Pipeline</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Page Setup */
+        body { 
+            margin: 0; 
+            padding: 0;
+            background: #020408; /* Deep Obsidian Black */
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            overflow: hidden; 
+            font-family: 'JetBrains Mono', monospace;
+            color: #00f3ff;
+        }
+
+        /* The Game Container Wrapper */
+        .soc-frame {
+            position: relative;
+            padding: 10px;
+            background: #0a0e14;
+            border: 2px solid #1f2937;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.1);
+        }
+
+        /* Neon Corner Accents for Neo-Brutalist Look */
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #00f3ff;
+            z-index: 100;
+        }
+        .top-left { top: -5px; left: -5px; border-right: none; border-bottom: none; }
+        .top-right { top: -5px; right: -5px; border-left: none; border-bottom: none; }
+        .bottom-left { bottom: -5px; left: -5px; border-right: none; border-top: none; }
+        .bottom-right { bottom: -5px; right: -5px; border-left: none; border-top: none; }
+
+        /* Actual Phaser Canvas Styling */
+        #app { 
+            display: block;
+            cursor: crosshair;
+        }
+
+        /* Dashboard Link (For your demo video) */
+        .pipeline-status {
+            margin-top: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            gap: 20px;
+            opacity: 0.7;
+        }
+
+        .pipeline-status a {
+            color: #00ff00;
+            text-decoration: none;
+            border-bottom: 1px dashed #00ff00;
+        }
+        
+        .pipeline-status a:hover {
+            opacity: 1;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .live-indicator {
+            color: #00ff00;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.2; }
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/index-77a3a1c1.js"></script>
+</head>
+<body>
+
+    <div style="margin-bottom: 15px; text-align: center;">
+        <h1 style="margin: 0; font-family: 'Orbitron', sans-serif; font-size: 24px; letter-spacing: 4px;">SENTINEL<span style="color:#ffffff;">_CORE</span></h1>
+        <div style="font-size: 10px; color: #4b5563; margin-top: 5px;">SEC-OPS TERMINAL V1.0.42 // BUILDATHON EDITION</div>
+    </div>
+
+    <div class="soc-frame">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+        
+        <div id="app"></div>
+    </div>
+
+    <div class="pipeline-status">
+        <span><span class="live-indicator">●</span> DATA_BRIDGE: CONNECTED</span>
+        <span>PORT: 3000</span>
+        <a href="http://localhost:3000/stats" target="_blank">OPEN ANALYTICS DASHBOARD →</a>
+    </div>
+
+    
+</body>
+</html>

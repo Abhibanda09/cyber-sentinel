@@ -1,0 +1,22 @@
+version: '3'
+services:
+  # Kafka for message streaming
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    ports: [ '2181:2181' ]
+    environment: 
+      - ALLOW_ANONYMOUS_LOGIN=yes # Use a list format like this
+
+  kafka:
+    image: bitnami/kafka:latest
+    ports: [ '9092:9092' ]
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    depends_on: [ zookeeper ]
+
+  # RisingWave for real-time analytics
+  risingwave:
+    image: risingwavelabs/risingwave:latest
+    ports: [ '4566:4566' ]
+    command: [ "playground" ]

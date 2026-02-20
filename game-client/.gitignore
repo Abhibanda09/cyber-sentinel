@@ -7,9 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node modules
 node_modules
+
+# Ignore all dist folders EXCEPT game-client/dist
 dist
 dist-ssr
+!game-client/dist
+
+# Local environment files
 *.local
 
 # Editor directories and files

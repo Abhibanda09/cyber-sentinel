@@ -4,7 +4,7 @@ import Phaser from 'phaser';
 const dataEmitter = {
     emit: async (eventType, metadata) => {
         try {
-            await fetch('http://localhost:3000/event', {
+            await fetch('https://cyber-sentinel-nbar.onrender.com/event', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
